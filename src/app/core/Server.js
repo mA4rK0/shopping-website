@@ -2,12 +2,14 @@ import express from "express";
 import cors from "cors";
 import connectdb from "./utils/db.js";
 import Product from "../models/Product.js";
+import productRoutes from "../routes/CRUD_Routes.js";
 const app = express();
 
 const port = 3030;
 
 app.use(cors());
 app.use(express.json());
+app.use("/api/products", productRoutes);
 app.use(express.urlencoded({ extended: true }));
 
 connectdb();
