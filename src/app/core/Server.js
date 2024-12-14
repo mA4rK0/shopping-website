@@ -9,30 +9,10 @@ const port = 3030;
 
 app.use(cors());
 app.use(express.json());
-app.use("/api/products", productRoutes);
 app.use(express.urlencoded({ extended: true }));
+app.use("/api/products", productRoutes);
 
 connectdb();
-
-// app.post("/add-default-product", async (req, res) => {
-//   try {
-//     const product = new Product({
-//       name: "Soap",
-//       image: "https://example.com/image.jpg",
-//       description: "For personal hygiene",
-//       stock: 50,
-//       category: "Bathroom",
-//       price: 1.99,
-//       available: true,
-//       shipping: 5,
-//     });
-//     const savedProduct = await product.save();
-//     res.status(201).json(savedProduct);
-//   } catch (error) {
-//     console.error("Error saving default product:", error);
-//     res.status(500).json({ message: "Failed to save product", error });
-//   }
-// });
 
 // app.post("/delete-all-products", async (req, res) => {
 //   try {

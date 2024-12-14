@@ -1,0 +1,21 @@
+---
+import Layout from "../app/views/layouts/Layout.astro";
+
+const products = await fetch("http://localhost:3030/api/products/displayProducts");
+const display = await products.json();
+---
+
+<Layout>
+  <section>
+    <h1>Dashboard</h1>
+    <ul>
+      {
+        display.map((product) => (
+          <li>
+            <a href={`/display/${product.name}`}>{product.name}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>

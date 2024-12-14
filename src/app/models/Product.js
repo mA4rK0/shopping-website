@@ -29,10 +29,8 @@ const productSchema = new mongoose.Schema({
     min: 0,
   },
   available: {
-    type: Boolean,
+    type: String,
     required: true,
-    enum: [true, false],
-    default: true,
   },
   shipping: {
     type: Number,
@@ -49,9 +47,9 @@ const productSchema = new mongoose.Schema({
 // };
 
 //TODO : move this static method to update controller file
-productSchema.statics.closeStore = function () {
-  return this.updateMany({}, { stock: 0, available: false });
-};
+// productSchema.statics.closeStore = function () {
+//   return this.updateMany({}, { stock: 0, available: false });
+// };
 
 const Product = mongoose.model("Product", productSchema);
 

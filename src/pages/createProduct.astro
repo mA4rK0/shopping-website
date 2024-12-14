@@ -1,0 +1,33 @@
+---
+
+---
+
+<section>
+  <form action="http://localhost:3030/api/products/createProduct" method="post">
+    <label for="name">Product Name:</label>
+    <input type="text" id="name" name="name" required /><br /><br />
+
+    <label for="image">Image URL:</label>
+    <input type="url" id="image" name="image" required /><br /><br />
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" placeholder="Enter product description" required></textarea><br /><br />
+
+    <label for="stock">Stock:</label>
+    <input type="number" id="stock" name="stock" required /><br /><br />
+
+    <label for="category">Category:</label>
+    <input type="text" id="category" name="category" required /><br /><br />
+
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" step="0.01" required /><br /><br />
+
+    <label for="available">Available:</label>
+    <input type="checkbox" id="available" name="available" checked /><br /><br />
+
+    <label for="shipping">Shipping:</label>
+    <input type="number" id="shipping" name="shipping" required /><br /><br />
+
+    <button type="submit">Create Product</button>
+  </form>
+</section>

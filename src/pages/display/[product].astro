@@ -1,0 +1,20 @@
+---
+export async function getStaticPaths() {
+  const data = await fetch("http://localhost:3030/api/products/displayProducts").then((response) => response.json());
+
+  return data.map((product) => {
+    return {
+      params: { product: product.name },
+    };
+  });
+}
+
+const { product } = Astro.params;
+const products = await fetch(`http://localhost:3030/api/products/display/${product}`);
+const response = await products.json();
+---
+
+<section>
+  <h1>{response.name}</h1>
+  <p>{response.description}</p>
+</section>
