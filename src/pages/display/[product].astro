@@ -17,4 +17,5 @@ const response = await products.json();
 <section>
   <h1>{response.name}</h1>
   <p>{response.description}</p>
+  <a href={`/edit/${response._id}`}>Edit Product</a>
 </section>

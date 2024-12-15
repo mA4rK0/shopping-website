@@ -5,7 +5,9 @@ const displayAProduct = async (req, res) => {
     const { product } = req.params;
     const disProduct = await Product.findOne({ name: product });
     res.status(200).json(disProduct);
-  } catch (error) {}
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching product", error });
+  }
 };
 
 export default displayAProduct;

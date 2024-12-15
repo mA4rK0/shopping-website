@@ -16,6 +16,7 @@
     "astro": "^5.0.3",
     "cors": "^2.8.5",
     "express": "^4.21.2",
+    "method-override": "^3.0.0",
     "mongoose": "^8.8.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
