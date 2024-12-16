@@ -17,5 +17,9 @@ const response = await products.json();
 <section>
   <h1>{response.name}</h1>
   <p>{response.description}</p>
+  <p>{response.price}</p>
   <a href={`/edit/${response._id}`}>Edit Product</a>
+  <form action={`http://localhost:3030/api/products/delete/${response._id}?_method=DELETE`} method="post">
+    <button>delete</button>
+  </form>
 </section>

@@ -13,8 +13,8 @@ const createProduct = async (req, res) => {
       available,
       shipping,
     });
-    const savedProduct = await newProduct.save();
-    res.status(201).json(savedProduct);
+    await newProduct.save();
+    res.redirect("http://localhost:4321/dashboard");
   } catch (error) {
     console.error("Error saving default product:", error);
     res.status(500).json({ message: "Failed to save product", error });
